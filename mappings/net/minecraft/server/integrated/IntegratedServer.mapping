@@ -1,5 +1,6 @@
 CLASS net/minecraft/class_601 net/minecraft/server/integrated/IntegratedServer
 	FIELD field_2204 client Lnet/minecraft/class_1600;
+	FIELD field_2204 mc Lnet/minecraft/client/Minecraft;
 	FIELD field_2205 levelInfo Lnet/minecraft/class_1156;
 	FIELD field_2207 paused Z
 	FIELD field_2208 published Z

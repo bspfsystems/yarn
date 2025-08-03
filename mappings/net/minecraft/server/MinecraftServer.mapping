@@ -146,6 +146,9 @@ CLASS net/minecraft/server/MinecraftServer
 	METHOD method_3000 getPort (Lnet/minecraft/class_1156$class_1157;Z)Ljava/lang/String;
 		ARG 1 gamemode
 		ARG 2 cheatsAllowed
+	METHOD method_3000 openToLAN (Lnet/minecraft/class_1157;Z)Ljava/lang/String;
+		ARG 1 mode
+		ARG 2 cheats
 	METHOD method_3001 saveWorlds (Z)V
 		ARG 1 silent
 	METHOD method_3002 logProgress (Ljava/lang/String;I)V
@@ -153,6 +156,7 @@ CLASS net/minecraft/server/MinecraftServer
 		ARG 2 worldProgress
 	METHOD method_3003 isStopped ()Z
 	METHOD method_3004 getPlayerManager ()Lnet/minecraft/class_743;
+	METHOD method_3005 getLAN ()Lnet/minecraft/class_805;
 	METHOD method_3006 isLoading ()Z
 	METHOD method_3007 hasGui ()Z
 	METHOD method_3008 getTicks ()I

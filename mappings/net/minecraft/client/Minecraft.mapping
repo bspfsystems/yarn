@@ -37,6 +37,7 @@ CLASS net/minecraft/client/Minecraft
 	FIELD field_3777 crashReport Lnet/minecraft/class_1;
 	FIELD field_3778 ticker Lnet/minecraft/class_354;
 	FIELD field_3779 snooper Lnet/minecraft/class_853;
+	FIELD field_3780 resourceDownloadThread Lnet/minecraft/class_320;
 	FIELD field_3781 attackCooldown I
 	FIELD field_3782 tempWidth I
 	FIELD field_3783 tempHeight I
@@ -137,9 +138,12 @@ CLASS net/minecraft/client/Minecraft
 	METHOD method_2913 isWindowFocused ()Z
 	METHOD method_2914 initializeTimerHackThread ()V
 	METHOD method_2916 runGameLoop ()V
+	METHOD method_2918 forceReload ()V
 	METHOD method_2919 doPick ()V
 	METHOD method_2920 getMaxTextureSize ()I
 	METHOD method_2921 initializeGame ()V
+	METHOD method_2922 (I)V
+		ARG 1 dimension
 	METHOD method_2927 crash (Lnet/minecraft/class_1;)V
 		ARG 1 crashReport
 	METHOD method_2928 openScreen (Lnet/minecraft/class_388;)V
@@ -184,6 +188,7 @@ CLASS net/minecraft/client/Minecraft
 	METHOD method_2955 getChunkDebugString ()Ljava/lang/String;
 	METHOD method_2956 getEntitiesDebugString ()Ljava/lang/String;
 	METHOD method_2957 getWorldDebugString ()Ljava/lang/String;
+	METHOD method_2958 getParticleDebugString ()Ljava/lang/String;
 	METHOD method_2959 isDemo ()Z
 	METHOD method_2960 getNetworkHandler ()Lnet/minecraft/class_1845;
 	METHOD method_2961 isHudEnabled ()Z

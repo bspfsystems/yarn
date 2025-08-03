@@ -237,23 +237,32 @@ CLASS net/minecraft/class_197 net/minecraft/block/Block
 	FIELD field_6256 CARPET Lnet/minecraft/class_197;
 	FIELD field_6257 HARDENED_CLAY Lnet/minecraft/class_197;
 	FIELD field_6258 COAL_BLOCK Lnet/minecraft/class_197;
+	FIELD field_6259 textureName Ljava/lang/String;
 	FIELD field_7260 REGISTRY Lnet/minecraft/class_1943;
 	FIELD field_7261 GRAVEL Lnet/minecraft/class_197$class_200;
 		COMMENT Gravel sound type
+	FIELD field_7261 GRAVEL_SOUND_GROUP Lnet/minecraft/class_200;
 	FIELD field_7262 RAIL Lnet/minecraft/class_197$class_200;
 		COMMENT Rail sound type
+	FIELD field_7262 RAIL_SOUND_GROUP Lnet/minecraft/class_200;
 	FIELD field_7263 GLASS Lnet/minecraft/class_197$class_200;
 		COMMENT Glass sound type
+	FIELD field_7263 GLASS_SOUND_GROUP Lnet/minecraft/class_200;
 	FIELD field_7264 CLOTH Lnet/minecraft/class_197$class_200;
 		COMMENT Cloth sound type
+	FIELD field_7264 CLOTH_SOUND_GROUP Lnet/minecraft/class_200;
 	FIELD field_7265 SAND Lnet/minecraft/class_197$class_200;
 		COMMENT Sand sound type
+	FIELD field_7265 SAND_SOUND_GROUP Lnet/minecraft/class_200;
 	FIELD field_7266 SNOW Lnet/minecraft/class_197$class_200;
 		COMMENT Snow sound type
+	FIELD field_7266 SNOW_SOUND_GROUP Lnet/minecraft/class_200;
 	FIELD field_7267 LADDER Lnet/minecraft/class_197$class_200;
 		COMMENT Ladder sound type
+	FIELD field_7267 LADDER_SOUND_GROUP Lnet/minecraft/class_200;
 	FIELD field_7268 ANVIL Lnet/minecraft/class_197$class_200;
 		COMMENT Anvil sound type
+	FIELD field_7268 ANVIL_SOUND_GROUP Lnet/minecraft/class_200;
 	FIELD field_7269 fullBlock Z
 		COMMENT Specifies whether the current block is a full block
 	FIELD field_7270 opacity I
@@ -555,6 +564,11 @@ CLASS net/minecraft/class_197 net/minecraft/block/Block
 		COMMENT @return The current block
 		ARG 1 group
 			COMMENT the itemgroup that the block must be added to
+	METHOD method_407 (Lnet/minecraft/class_1150;III)Lnet/minecraft/class_1069;
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_408 onNeighborUpdate (Lnet/minecraft/class_1150;IIII)V
 		ARG 1 world
 		ARG 2 x
@@ -581,11 +595,20 @@ CLASS net/minecraft/class_197 net/minecraft/block/Block
 			COMMENT id
 	METHOD method_411 (Lnet/minecraft/class_1150;IIIII)V
 		ARG 1 world
-	METHOD method_413 (Lnet/minecraft/class_1150;IIILnet/minecraft/class_231;Ljava/util/List;Lnet/minecraft/class_864;)V
+	METHOD method_411 (Lnet/minecraft/class_1150;IIILnet/minecraft/class_197;I)V
 		ARG 1 world
 		ARG 2 x
 		ARG 3 y
 		ARG 4 z
+		ARG 5 block
+	METHOD method_413 appendCollisionBoxes (Lnet/minecraft/class_1150;IIILnet/minecraft/class_231;Ljava/util/List;Lnet/minecraft/class_864;)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 entityBox
+		ARG 6 boxes
+		ARG 7 entity
 	METHOD method_414 rayTrace (Lnet/minecraft/class_1150;Lnet/minecraft/class_2552;Lnet/minecraft/class_236;Lnet/minecraft/class_236;)Lnet/minecraft/class_234;
 		ARG 1 world
 		ARG 2 pos
@@ -626,6 +649,11 @@ CLASS net/minecraft/class_197 net/minecraft/block/Block
 		COMMENT @return Whether the block should drop as an item during an explosion
 		ARG 1 explosion
 			COMMENT the explosion that caused the block to break
+	METHOD method_4185 (Lnet/minecraft/class_1150;IIIIFFFI)I
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_4187 doImmediateUpdates ()Z
 		COMMENT Returns whether the block's onScheduledTick should be called directly if ServerWorld.immediateUpdates is true, or to schedule it and call it later.
 		COMMENT Used by Fire (with false) for some reason.
@@ -664,6 +692,12 @@ CLASS net/minecraft/class_197 net/minecraft/block/Block
 	METHOD method_4193 getMinZ ()D
 		COMMENT Returns the block's bounding box' maximum Y value
 		COMMENT @return Maximum Y value
+	METHOD method_420 onBlockBreakStart (Lnet/minecraft/class_1150;IIILnet/minecraft/class_988;)V
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 player
 	METHOD method_420 onBlockBreakStart (Lnet/minecraft/class_1150;Lnet/minecraft/class_2552;Lnet/minecraft/class_988;)V
 		ARG 1 world
 		ARG 2 pos
@@ -727,6 +761,12 @@ CLASS net/minecraft/class_197 net/minecraft/block/Block
 		ARG 2 x
 		ARG 3 y
 		ARG 4 z
+	METHOD method_428 (Lnet/minecraft/class_1150;IIII)Z
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
+		ARG 5 l
 	METHOD method_429 getBlockType ()I
 	METHOD method_430 setResistance (F)Lnet/minecraft/class_197;
 		COMMENT Sets the block's resistance. Used in registering blocks.
@@ -828,6 +868,10 @@ CLASS net/minecraft/class_197 net/minecraft/block/Block
 		ARG 3 y
 		ARG 4 z
 		ARG 5 blockData
+	METHOD method_452 (Lnet/minecraft/class_1158;IIII)Z
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_453 getPistonInteractionType ()I
 		COMMENT Returns the block's piston interaction type, as provided by it's material.
 		COMMENT @return Current block's piston interaction type
@@ -837,6 +881,9 @@ CLASS net/minecraft/class_197 net/minecraft/block/Block
 		ARG 3 y
 		ARG 4 z
 	METHOD method_455 getLight (Lnet/minecraft/class_1158;III)I
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_456 setBlockItemBounds ()V
 		COMMENT Sets the bounds for the BlockItem
 	METHOD method_460 breakNaturally (Lnet/minecraft/class_1150;III)V
@@ -854,8 +901,11 @@ CLASS net/minecraft/class_197 net/minecraft/block/Block
 		COMMENT Returns whether a block has collision, i.e. stops entities
 		COMMENT @return Whether a block has collision
 	METHOD method_470 getColor ()I
-	METHOD method_471 (Lnet/minecraft/class_1150;III)F
+	METHOD method_471 getHardness (Lnet/minecraft/class_1150;III)F
 		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_474 setUnbreakable ()Lnet/minecraft/class_197;
 		COMMENT Sets the current block as unbreakable. Used in registering blocks.
 		COMMENT Setting the strength as -1 makes the block unbreakable. Used by barriers and command blocks.
@@ -874,11 +924,20 @@ CLASS net/minecraft/class_197 net/minecraft/block/Block
 		COMMENT @return Tick rate
 		ARG 1 world
 			COMMENT the world that the block is placed in
+	METHOD method_4790 (Lnet/minecraft/class_1150;IIIILnet/minecraft/class_1071;)Z
+		ARG 1 world
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_4791 registerTextures (Lnet/minecraft/class_1558;)V
 		ARG 1 registry
 	METHOD method_4792 isEqual (II)Z
 		ARG 0 id1
 		ARG 1 id2
+	METHOD method_4794 (Lnet/minecraft/class_1158;IIII)Lnet/minecraft/class_1557;
+		ARG 2 x
+		ARG 3 y
+		ARG 4 z
 	METHOD method_4795 is (I)Z
 		ARG 1 id
 	METHOD method_4796 getSideTexture (I)Lnet/minecraft/class_1557;
@@ -940,6 +999,8 @@ CLASS net/minecraft/class_197 net/minecraft/block/Block
 		COMMENT @return The Block
 		ARG 0 id
 			COMMENT the id for which the Block is returned
+	METHOD method_6449 getMapColor (I)Lnet/minecraft/class_65;
+		ARG 1 blockData
 	METHOD method_6450 setOpacity (I)Lnet/minecraft/class_197;
 		COMMENT Sets the block's light opacity. Used in registering blocks.
 		COMMENT @return The current block

@@ -71,6 +71,7 @@ CLASS net/minecraft/class_347 net/minecraft/client/option/GameOptions
 	FIELD field_944 commandKey Lnet/minecraft/class_327;
 	FIELD field_945 allKeys [Lnet/minecraft/class_327;
 	FIELD field_946 client Lnet/minecraft/class_1600;
+	FIELD field_946 mc Lnet/minecraft/client/Minecraft;
 	FIELD field_947 difficultyLevel I
 	FIELD field_948 hudHidden Z
 	FIELD field_949 perspective I
